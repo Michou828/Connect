@@ -1,0 +1,14 @@
+body{
+    margin: 20%;
+    font-family: sans-serif;
+    background-color: aquamarine;
+}
+
+#name{
+    font-size: 20px;
+}
+
+#order{
+    margin-top: 20px;
+    font-size: 25px;
+}
