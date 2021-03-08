@@ -6,7 +6,6 @@ var credentials = {
   cert: fs.readFileSync('star_itp_io.pem')
 };
 
-var httpsServer = https.createServer(credentials, app);
 
 
 // Start Normal Express Code
@@ -140,6 +139,7 @@ app.get('/logout', function(req, res) {
 	res.redirect('/');
 });	
 
+var httpsServer = https.createServer(credentials, app);
 
 // Default HTTPS Port
 httpsServer.listen(443);
