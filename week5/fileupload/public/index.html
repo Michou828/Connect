@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <Title>The Best Restaurant</Title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <form method="POST" action="/formdata" style="background-color:white; padding: 5%;" enctype="multipart/form-data">
+            <h1>Welcome to the best Restaurant!</h1>
+            <label for="name" id="name">Tell us your name</label>
+            <input type="text" name="name" value="Your name" > <br /><br />
+            <label for="photo" id="photo">Upload a photo of you</label>
+            <input type="file" name="photo"><br />
+            <input type="radio" name="gender"  id="male" value="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender"  id="female" value="female">
+            <label for="male">Female</label><br/><br/>
+            <label for="color">Pick your favorite color</label>
+            <input type="color" name="color" id="color"><br />
+
+            <h2 style="margin-top: 50px;">Pick your food</h2>
+
+            <label for="main_course">Pick your main course</label>
+            <select name="main_course" id="main_course">
+                <option value="Pizza">Pizza</option>
+                <option value="Noodle">Noodle</option>
+                <option value="Pasta">Pasta</option>
+                <option value="Burger">Burger</option>
+                <option value="Rice">Rice</option>
+            </select>    <br />
+
+            <label for="sides">Pick your sides</label>
+            <select name="sides" id="sides">
+                <option value="Fries">Fries</option>
+                <option value="Salad">Salad</option>
+                <option value="Bean">Beans</option>
+                <option value="Pancake">Pancake</option>
+            </select>  <br /><br />
+
+            <label for="allergy">Any allergy we need to know?</label><br />
+            <textarea name="allergy" cols="50" row="10"></textarea><br />
+
+            <input type="submit" name="submit" value="Place order" id="order">
+        </form>
+    </body>
+</html>

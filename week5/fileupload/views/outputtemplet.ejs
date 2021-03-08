@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>test</title>
+        <link rel="stylesheet" href="./templetStyle.css" />
+    </head>
+    <body style="margin: 20%; font-family: sans-serif; background-color: aquamarine;">
+
+        <%  if (data[0].gender == "male"){ %>
+            <h1> Hello! Handsome <%= data[0].name %></h1>
+        <% }else{ %>
+            <h1> Hello! Beautiful <%= data[0].name %></h1>
+        <% } %>
+
+
+        <p>The guest list for tonight:</p><br />
+        <% for (var i = 0; i < data.length; i++){ %>
+            <div id="dataout<%= i %>" style="color: <%= data[i].color %>"><a href="/displayrecord?_id=<%= data[i]._id %>"> <%= data[i].name %></a></div>
+        <% } %>
+
+        <p>However we are very sorry to inform you that we ran out of <%= data[0].main_course %> with <%= data[0].sides %></p>
+        <p>You also informed us that you have these allergies: </p>
+        <p><%= data[0].allergy %></p>
+        <p>Well...We don't have them anyways. So no worries :)</p>
+
+    </body>
+</html>
