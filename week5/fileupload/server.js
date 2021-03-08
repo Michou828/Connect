@@ -1,3 +1,12 @@
+var https = require('https');
+var fs = require('fs'); // Using the filesystem module
+
+var credentials = {
+  key: fs.readFileSync('star_itp_io.key'),
+  cert: fs.readFileSync('star_itp_io.pem')
+};
+
+
 var datastore = require('nedb');
 var db = new datastore({ filename: 'database.json', autoload: true });
 
@@ -45,6 +54,10 @@ app.post('/formdata',upload.single('photo'),function(req,res){
       });
 });
 
-app.listen(80, function(){
-    console.log('App listening on port 80!');
+var httpsServer = https.createServer(credentials, app);
+
+// Default HTTPS Port
+// httpsServer.listen(443);
+httpsServer.listen(443, function(){
+    console.log('App listening on port 443!');
 });
