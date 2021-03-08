@@ -142,4 +142,6 @@ app.get('/logout', function(req, res) {
 var httpsServer = https.createServer(credentials, app);
 
 // Default HTTPS Port
-httpsServer.listen(443);
+httpsServer.listen(443, function(){
+    console.log('App listening on port 443!');
+});
