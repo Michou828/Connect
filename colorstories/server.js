@@ -201,6 +201,6 @@ app.get('/storyhub',function (req,res){
 var httpsServer = https.createServer(credentials, app);
 
 // Default HTTPS Port
-app.listen(443, function(){
+httpsServer.listen(443, function(){
     console.log('App listening on port 443!');
 });
