@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Welcome to Color Stories</title>
+        <link rel="stylesheet" href="/css/storyhubstyle.css" />
+        <script>
+            //Web Speech API - speechSynthesis
+            var synth = window.speechSynthesis;
+
+            function say(something){
+                var utterThis = new SpeechSynthesisUtterance(something);
+                utterThis.voice = synth.getVoices()[0];
+                utterThis.pitch = 1;
+                utterThis.rate = 1;
+                synth.speak(utterThis);
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div id="headerbar">
+            <% if (!user){ %>
+                <a class="headerbuttonsolid" href="/user_login">Log in</a>
+                <a class="headerbutton" href="/user_register">Register New User</a>	
+            <% } else { %>
+                <a class="headerbutton" href="/logout">Logout</a>
+                <a class="headerbuttonsolid" href="/storyhub">Your Hub</a>
+            <% } %>
+        </div>
+        
+
+        <!-- <select id='visibility-settings-select'>
+            <option disabled selected value="volvo">Visibility Settings</option>
+            <option value="">ALL Posts</option>
+            <option value="publicView">Only Public Posts</option>
+        </select> -->
+
+        <h1><span style="font-size:25px; color:black;">Welcome to</span><br />Color Stories</h1>
+
+        <% for (var i = 0; i < data.length; i++){ %>
+            <div class="storybox" id="story<%= i %>" style="background-color: <%= data[i].storyColor %>">
+                <div class="cornertag">@<%= data[i].username %></div>
+                <div style="display: none;">
+                    <%= data[i].story %>
+                </div>
+            </div>
+        <% } %>
+
+    </body>
+
+    <script>
+        var dataLenth = (document.getElementsByClassName('storybox')).length;
+
+        for (var i = 0; i < dataLenth; i++){ 
+            var inputButton = document.getElementById("story" + i);
+            inputButton.addEventListener('click', function(event){
+                var target = event.target;
+                say(
+                    target.children[target.children.length-1].innerText
+                );
+            });
+        }
+
+        var visibilitySelect = document.getElementById('visibility-settings-select');
+
+        visibilitySelect.addEventListener('change', (event)=>{
+            window.open('https://' + window.location.hostname + '/' + visibilitySelect.value);
+        })
+    </script>
+
+    
+</html>

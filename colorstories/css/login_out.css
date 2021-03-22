@@ -1,0 +1,108 @@
+body{
+    position: relative;
+    margin:10% 30%;
+    background-color:whtie;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+    font-size: 45px;
+    margin:2%;
+}
+
+h2{
+    font-size: 25px;
+    margin:2%;
+}
+
+#logbox{
+    background-color:white;
+    padding: 15%;
+    border-radius: 20px;
+    border: 2px solid hotpink;
+    box-shadow: 5px 5px 30px hotpink;
+    margin-bottom: 4%;
+}
+
+.inputbox{
+    border-radius: 5px;
+    border: 2px solid yellowgreen;
+    height: 40px;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+
+.inputlabel{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#submit{
+    font-size: 15px;
+    padding: 5px 15px;
+    border: 2px solid yellowgreen;
+    border-radius: 20px;
+    background-color: white;
+    color: yellowgreen;
+}
+
+#submit:hover{
+    font-size: 15px;
+    padding: 5px 15px;
+    border: 2px solid hotpink;
+    border-radius: 20px;
+    background-color: white;
+    color: hotpink;
+    cursor: pointer;
+}
+
+a#register:link, a#register:visited {
+    font-size: 12px;
+    text-decoration: none;
+    color: #a6b5a3;
+    margin-left: 10px;
+}
+
+a#register:hover{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+#errorMessage{
+    color: red;
+    margin:0 0 5% 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+#backhome{
+    color: hotpink;
+    padding: 1%;
+    border-radius: 20px;
+    border: 2px solid hotpink;
+    background-color: transparent;
+    text-shadow: 5px 5px 30px hotpink;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a#backhome.link, a#backhome.visited {
+    text-decoration: none;
+}
+
+#backhome:hover{
+    color: white;
+    padding: 1%;
+    border-radius: 20px;
+    border: 2px solid hotpink;
+    background-color: hotpink;
+    box-shadow: 5px 5px 30px hotpink;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
